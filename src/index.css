@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500/30;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-slate-900/40 backdrop-blur-xl border border-slate-800/50 shadow-xl;
+  }
+  
+  .glass-emerald {
+    @apply bg-emerald-500/5 backdrop-blur-xl border border-emerald-500/20 shadow-lg shadow-emerald-500/5;
+  }
+  
+  .glass-purple {
+    @apply bg-purple-500/5 backdrop-blur-xl border border-purple-500/20 shadow-lg shadow-purple-500/5;
+  }
+
+  .emerald-glow {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.1);
+  }
+
+  .purple-glow {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full hover:bg-slate-700;
+  }
+}
